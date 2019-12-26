@@ -1,8 +1,9 @@
 package User;
 
 import java.util.Date;
+import Observer.Observer;
 
-public class User {
+public class User implements Observer{
 	
 	private int id;
 	private String name;
@@ -12,6 +13,7 @@ public class User {
 	private String email;
 	private String userName;
 	private String password;
+	private String offerLetter;
 	
 	public User(int id, String name, Date dateOfBirth, char gender, String phoneNumber, String email, String userName, String password) {
 		super();
@@ -74,4 +76,7 @@ public class User {
 		this.password = password;
 	}
 
+	public void update(String offers) {
+		this.offerLetter = offers;
+	}
 }
