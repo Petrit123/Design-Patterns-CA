@@ -2,7 +2,7 @@ package Decorator;
 
 public class Nachos extends ComboMixDecorator {
 	
-	public Nachos() {
+	public Nachos(ComboMix comboMix) {
 		
 		this.comboMix = comboMix;
 	}

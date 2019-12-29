@@ -2,7 +2,7 @@ package Decorator;
 
 public class Malteser extends ComboMixDecorator {
 	
-	public Malteser() {
+	public Malteser(ComboMix comboMix) {
 
 		this.comboMix = comboMix;
 	}

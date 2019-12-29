@@ -2,7 +2,7 @@ package Decorator;
 
 public class OmniPassDiscount extends ComboMixDecorator {
 	
-	public OmniPassDiscount() {
+	public OmniPassDiscount(ComboMix comboMix) {
 		
 		this.comboMix = comboMix;
 	}
