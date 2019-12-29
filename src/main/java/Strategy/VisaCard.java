@@ -1,4 +1,4 @@
-package PaymentMethod;
+package Strategy;
 
 public abstract class VisaCard implements PaymentMethod{
 	

@@ -1,12 +1,12 @@
-package Seat;
+package Entity;
 
-public class Seat {
+public class SeatEntity {
 	
 	private String column;
 	private int row;
 	private String seatStatus;
 	
-	public Seat(String column, int row, String seatStatus) {
+	public SeatEntity(String column, int row, String seatStatus) {
 		super();
 		this.column = column;
 		this.row = row;

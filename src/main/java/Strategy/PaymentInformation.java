@@ -1,4 +1,4 @@
-package PaymentMethod;
+package Strategy;
 
 import java.util.Date;
 import java.sql.Time;

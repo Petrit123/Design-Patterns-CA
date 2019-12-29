@@ -1,9 +1,9 @@
-package User;
+package Entity;
 
 import java.util.Date;
 import Observer.Observer;
 
-public class User implements Observer{
+public class UserEntity implements Observer{
 	
 	private int id;
 	private String name;
@@ -14,8 +14,8 @@ public class User implements Observer{
 	private String userName;
 	private String password;
 	private String offerLetter;
-	
-	public User(int id, String name, Date dateOfBirth, char gender, String phoneNumber, String email, String userName, String password) {
+
+	public UserEntity(int id, String name, Date dateOfBirth, char gender, String phoneNumber, String email, String userName, String password) {
 		super();
 		this.id = id;
 		this.name = name;

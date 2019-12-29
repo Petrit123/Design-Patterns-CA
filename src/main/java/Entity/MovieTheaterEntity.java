@@ -1,11 +1,9 @@
-package MovieTheater;
+package Entity;
 
 import java.util.List;
 
-import Movie.Movie;
 
-
-public class MovieTheater {
+public class MovieTheaterEntity {
 	
 	private int movieTheaterId;
 	private String movieTheaterName;
@@ -13,10 +11,10 @@ public class MovieTheater {
 	private String phoneNumber;
 	private String email;
 	private float rating;
-	private List<Movie> movies;
+	private List<MovieEntity> movies;
 	
-	public MovieTheater(int movieTheaterId, String movieTheaterName, String movieTheaterAddress, String phoneNumber,
-			String email, float rating, List<Movie> movies) {
+	public MovieTheaterEntity(int movieTheaterId, String movieTheaterName, String movieTheaterAddress, String phoneNumber,
+							  String email, float rating, List<MovieEntity> movies) {
 		super();
 		this.movieTheaterId = movieTheaterId;
 		this.movieTheaterName = movieTheaterName;
@@ -63,10 +61,10 @@ public class MovieTheater {
 	public void setRating(float rating) {
 		this.rating = rating;
 	}
-	public List<Movie> getMovies() {
+	public List<MovieEntity> getMovies() {
 		return movies;
 	}
-	public void setMovies(List<Movie> movies) {
+	public void setMovies(List<MovieEntity> movies) {
 		this.movies = movies;
 	}
 	

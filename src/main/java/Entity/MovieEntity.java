@@ -1,6 +1,6 @@
-package Movie;
+package Entity;
 
-public class Movie {
+public class MovieEntity {
 	
 	private int movieId;
 	private int movieTheaterId;
@@ -12,8 +12,8 @@ public class Movie {
 	private String duration;
 	private String releaseDate;
 	
-	public Movie(int movieId, int movieTheaterId, String movieName, String description, String cast, String category,
-			String genre, String duration, String releaseDate) {
+	public MovieEntity(int movieId, int movieTheaterId, String movieName, String description, String cast, String category,
+					   String genre, String duration, String releaseDate) {
 		super();
 		this.movieId = movieId;
 		this.movieTheaterId = movieTheaterId;

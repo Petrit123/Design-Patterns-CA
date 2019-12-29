@@ -1,14 +1,13 @@
-package Booking;
+package Entity;
 
 import java.sql.Time;
 
 import java.util.Date;
 import java.util.List;
 
-import PaymentMethod.PaymentMethod;
-import Seat.Seat;
+import Strategy.PaymentMethod;
 
-public class Booking {
+public class BookingEntity {
 	
 	private int bookingId;
 	private int userId;
@@ -19,10 +18,10 @@ public class Booking {
 	private Date dateBooked;
 	private String bookingStatus;
 	private int numTickets;
-	private List<Seat> seats;
+	private List<SeatEntity> seats;
 	
-	public Booking(int bookingId, int userId, int movieTheaterId, int movieId, double amount, Time movieShowingTime,
-			Date dateBooked, String bookingStatus, int numTickets, List<Seat> seats) {
+	public BookingEntity(int bookingId, int userId, int movieTheaterId, int movieId, double amount, Time movieShowingTime,
+						 Date dateBooked, String bookingStatus, int numTickets, List<SeatEntity> seats) {
 		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
@@ -90,10 +89,10 @@ public class Booking {
 	public void setNumTickets(int numTickets) {
 		this.numTickets = numTickets;
 	}
-	public List<Seat> getSeats() {
+	public List<SeatEntity> getSeats() {
 		return seats;
 	}
-	public void setSeats(List<Seat> seats) {
+	public void setSeats(List<SeatEntity> seats) {
 		this.seats = seats;
 	}
 	

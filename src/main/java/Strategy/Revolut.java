@@ -1,4 +1,4 @@
-package PaymentMethod;
+package Strategy;
 
 public class Revolut extends VisaCard {
 
