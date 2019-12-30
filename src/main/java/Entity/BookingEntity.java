@@ -14,14 +14,14 @@ public class BookingEntity {
 	private int movieTheaterId;
 	private int movieId;
 	private double amount;
-	private Time movieShowingTime;
-	private Date dateBooked;
+	private String movieShowingTime;
+	private String dateBooked;
 	private String bookingStatus;
 	private int numTickets;
 	private List<SeatEntity> seats;
 	
-	public BookingEntity(int bookingId, int userId, int movieTheaterId, int movieId, double amount, Time movieShowingTime,
-						 Date dateBooked, String bookingStatus, int numTickets, List<SeatEntity> seats) {
+	public BookingEntity(int bookingId, int userId, int movieTheaterId, int movieId, double amount, String movieShowingTime,
+						 String dateBooked, String bookingStatus, int numTickets, List<SeatEntity> seats) {
 		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
@@ -65,16 +65,16 @@ public class BookingEntity {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public Time getMovieShowingTime() {
+	public String getMovieShowingTime() {
 		return movieShowingTime;
 	}
-	public void setMovieShowingTime(Time movieShowingTime) {
+	public void setMovieShowingTime(String movieShowingTime) {
 		this.movieShowingTime = movieShowingTime;
 	}
-	public Date getDateBooked() {
+	public String getDateBooked() {
 		return dateBooked;
 	}
-	public void setDateBooked(Date dateBooked) {
+	public void setDateBooked(String dateBooked) {
 		this.dateBooked = dateBooked;
 	}
 	public String getBookingStatus() {

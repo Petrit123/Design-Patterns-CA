@@ -2,8 +2,7 @@ package Strategy;
 
 public class DebitCard extends VisaCard {
 
-	public DebitCard(String nameOnCard, String cardNumber, short cvv, String expiryDate) {
-		super(nameOnCard, cardNumber, cvv, expiryDate);
+	public DebitCard(String nameOnCard, String cardNumber, int cvv, String expiryDate) {
 	}
 
 	@Override

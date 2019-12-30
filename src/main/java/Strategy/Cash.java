@@ -7,7 +7,7 @@ public class Cash implements Strategy.PaymentMethod {
 	}
 	
 	public void paymentInformation() {
-		System.out.print("Thank you!");
+		System.out.print("Thank you! ");
 	}
 
 }

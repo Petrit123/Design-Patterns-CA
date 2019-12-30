@@ -8,17 +8,9 @@ public abstract class VisaCard implements PaymentMethod{
 	
 	private  String nameOnCard;
 	private String cardNumber;
-	private short cvv;
+	private int cvv;
 	private String expiryDate;	
 	private final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
-	
-	public VisaCard(String nameOnCard, String cardNumber, short cvv, String expiryDate) {
-		super();
-		this.nameOnCard = nameOnCard;
-		this.cardNumber = cardNumber;
-		this.cvv = cvv;
-		this.expiryDate = expiryDate;
-	}
 	
 	public String getNameOnCard() {
 		return nameOnCard;
@@ -36,11 +28,11 @@ public abstract class VisaCard implements PaymentMethod{
 		this.cardNumber = cardNumber;
 	}
 
-	public short getCvv() {
+	public int getCvv() {
 		return cvv;
 	}
 
-	public void setCvv(short cvv) {
+	public void setCvv(int cvv) {
 		this.cvv = cvv;
 	}
 
@@ -56,7 +48,7 @@ public abstract class VisaCard implements PaymentMethod{
 	public abstract String getCardType();
 	
 	public void pay(double amount) {
-		System.out.println(amount + " paid with visa card" + getCardType());
+		System.out.println(amount + " paid with visa " + getCardType());
 	}
 	
 	public void paymentInformation() {
