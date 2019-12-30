@@ -11,9 +11,10 @@ public class MovieEntity {
 	private String genre;
 	private String duration;
 	private String releaseDate;
+	private int numTickets;
 	
 	public MovieEntity(int movieId, int movieTheaterId, String movieName, String description, String cast, String category,
-					   String genre, String duration, String releaseDate) {
+					   String genre, String duration, String releaseDate, int numTickets) {
 		super();
 		this.movieId = movieId;
 		this.movieTheaterId = movieTheaterId;
@@ -24,6 +25,7 @@ public class MovieEntity {
 		this.genre = genre;
 		this.duration = duration;
 		this.releaseDate = releaseDate;
+		this.numTickets = numTickets;
 	}
 	
 	public int getMovieId() {
@@ -79,6 +81,14 @@ public class MovieEntity {
 	}
 	public void setReleaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
+	}
+
+	public int getNumTickets() {
+		return numTickets;
+	}
+
+	public void setNumTickets(int numTickets) {
+		this.numTickets = numTickets;
 	}
 	
 	
