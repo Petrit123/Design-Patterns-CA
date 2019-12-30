@@ -10,19 +10,11 @@ import Strategy.*;
 
 public class PaymentFactoryMethod {
 	
-	private VisaCard visaCard = new CreditCard("as","as",12,"as");
+	private VisaCard visaCard = new CreditCard("","",0,"");
 	private PayPal payPal = new PayPal("","","");
 	private Cash cash = new Cash();
 	
-	public static final String PAY_BY_CASH = "PAY_BY_CASH";
-	public static final String PAY_BY_CREDIT_CARD = "PAY_BY_CREDIT_CARD";
-	public static final String PAY_BY_DEBIT_CARD = "PAY_BY_DEBIT_CARD";
-	public static final String PAY_BY_REVOLUT_CARD = "PAY_BY_REVOLUT_CARD";
-	public static final String PAY_BY_PAYPAL = "PAY_BY_PAYPAL";
-	
-    public  PaymentMethod getPaymentMethod(String paymentMethod) {
-    	
-//        VisaCard visaCard = (VisaCard) paymentDetail;
+    public  PaymentMethod getPaymentMethod(PaymentMethodType paymentMethod) {
     	
         switch (paymentMethod) {
             case PAY_BY_CASH:
