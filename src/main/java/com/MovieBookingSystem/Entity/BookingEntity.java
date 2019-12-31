@@ -45,10 +45,10 @@ public class BookingEntity {
 	private int numTickets;
 	
 	@Column(name = "seats")
-	private List<SeatEntity> seats;
+	private SeatEntity seat;
 	
 	public BookingEntity(int bookingId, int userId, int movieTheaterId, int movieId, double amount, String movieShowingTime,
-						 String dateBooked, String bookingStatus, int numTickets, List<SeatEntity> seats) {
+						 String dateBooked, String bookingStatus, int numTickets, SeatEntity seat) {
 		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
@@ -59,7 +59,7 @@ public class BookingEntity {
 		this.dateBooked = dateBooked;
 		this.bookingStatus = bookingStatus;
 		this.numTickets = numTickets;
-		this.seats = seats;
+		this.seat = seat;
 	}
 	
 	public int getBookingId() {
@@ -116,11 +116,11 @@ public class BookingEntity {
 	public void setNumTickets(int numTickets) {
 		this.numTickets = numTickets;
 	}
-	public List<SeatEntity> getSeats() {
-		return seats;
+	public SeatEntity getSeats() {
+		return seat;
 	}
-	public void setSeats(List<SeatEntity> seats) {
-		this.seats = seats;
+	public void setSeats(SeatEntity seat) {
+		this.seat = seat;
 	}
 	
 	public void pay(PaymentMethod paymentMethod) {

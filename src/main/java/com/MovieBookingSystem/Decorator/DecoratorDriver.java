@@ -15,9 +15,7 @@ public class DecoratorDriver {
 		comboMix2 = new Nachos(comboMix2);
 		System.out.println(comboMix2.getComboType() + "\n" + "cost of: " + comboMix2.comboMixPrice());
 		comboMix2 = new OmniPassDiscount(comboMix2);
-		System.out.println(comboMix2.getComboType() + "\n" + "cost of: " + comboMix2.comboMixPrice());
-		
-		
+		System.out.println(comboMix2.getComboType() + "\n" + "cost of: " + comboMix2.comboMixPrice());		
 		
 	}
 
