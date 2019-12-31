@@ -16,20 +16,29 @@ public class PaymentFactoryMethod {
 	
     public  PaymentMethod getPaymentMethod(PaymentMethodType paymentMethod) {
     	
+    	PaymentMethod paymentMethodStrategy = null;
+    	
         switch (paymentMethod) {
             case PAY_BY_CASH:
-                return payWithCash();
+                paymentMethodStrategy = payWithCash();
+                
             case PAY_BY_CREDIT_CARD:
-            	return payWithCreditCard();
+                paymentMethodStrategy =payWithCreditCard();
+                
             case PAY_BY_DEBIT_CARD:
-            	return payWithDebitCard();
+                paymentMethodStrategy = payWithDebitCard();
+                
             case PAY_BY_REVOLUT_CARD:
-            	return payWithRevolutCard();
+                paymentMethodStrategy =payWithRevolutCard();
+                
             case PAY_BY_PAYPAL:
-            	return payWithPayPal();
+                paymentMethodStrategy = payWithPayPal();
+                
             default:
-                return null;
+                paymentMethodStrategy = null;
         }
+        
+        return paymentMethodStrategy;
         
     }
     

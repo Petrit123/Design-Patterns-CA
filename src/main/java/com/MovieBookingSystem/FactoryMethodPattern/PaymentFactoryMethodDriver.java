@@ -20,6 +20,8 @@ public class PaymentFactoryMethodDriver {
 		BookingEntity booking = new BookingEntity(1,1,1,1,50.0,"21:33:09","26/12/2019","Confirmed",1,seats);
 		booking.pay(payment.getPaymentMethod(PaymentMethodType.PAY_BY_CREDIT_CARD));				
 		
+		booking.pay(new CreditCard("Petrit krasniqi","123 1232",222,"12/12"));
+		
 	}
 
 }
