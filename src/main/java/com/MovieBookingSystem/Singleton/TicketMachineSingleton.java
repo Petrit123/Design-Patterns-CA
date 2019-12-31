@@ -1,10 +1,16 @@
 package com.MovieBookingSystem.Singleton;
 
+/**
+ * 
+ * @author Petrit Krasniqi
+ *
+ */
+
 public class TicketMachineSingleton {
 	
 	private boolean bookedOut;
 	private int totalMovieTickets;
-	private static TicketMachineSingleton ticketMachine;              // Static variable to hold one instance of the TicketMachineSingleton class
+	private static volatile TicketMachineSingleton ticketMachineInstance;              // Static variable to hold one instance of the TicketMachineSingleton class
 
 	private TicketMachineSingleton() {                                // private constructor so no one can instantiate this class.
 		
@@ -32,18 +38,17 @@ public class TicketMachineSingleton {
 		}
 	}
 		
-	public static TicketMachineSingleton getTicketMachineSingleton() {
-		if (ticketMachine == null) {
+	public static TicketMachineSingleton getTicketMachineSingletonInstance() {
+		if (ticketMachineInstance == null) {
 			
 			synchronized (TicketMachineSingleton.class) {
-				if (ticketMachine == null) {
+				if (ticketMachineInstance == null) {
 					
-					ticketMachine = new TicketMachineSingleton();
+					ticketMachineInstance = new TicketMachineSingleton();
 				}
-			}
-		}
-		
-		return ticketMachine;
+		    }			
+	}
+		return ticketMachineInstance;
 	}
 	
 
