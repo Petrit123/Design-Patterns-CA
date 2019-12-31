@@ -5,6 +5,10 @@ public class CreditCard extends VisaCard {
 	public CreditCard(String nameOnCard, String cardNumber, int cvv, String expiryDate) {
 	}
 
+	public CreditCard() {
+
+	}
+
 	@Override
 	public String getCardType() {
 		return "Credit Card";

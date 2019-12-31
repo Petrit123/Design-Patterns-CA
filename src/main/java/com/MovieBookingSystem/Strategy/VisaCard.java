@@ -48,6 +48,7 @@ public abstract class VisaCard implements PaymentMethod{
 	public abstract String getCardType();
 	
 	public void pay(double amount) {
+		paymentInformation();
 		System.out.println(amount + " paid with visa " + getCardType());
 	}
 	

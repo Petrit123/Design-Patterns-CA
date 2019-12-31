@@ -19,6 +19,10 @@ public class PayPal implements PaymentMethod{
 		this.password = password;
 	}
 
+	public PayPal() {
+
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -45,6 +49,7 @@ public class PayPal implements PaymentMethod{
 
 	
 	public void pay(double amount) {
+		paymentInformation();
 		System.out.println(amount + " paid using PayPal");
 	}
 	

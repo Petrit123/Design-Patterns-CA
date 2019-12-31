@@ -9,73 +9,36 @@ import com.MovieBookingSystem.Strategy.*;
  */
 
 public class PaymentFactoryMethod {
-	
-	private VisaCard visaCard = new CreditCard("","",0,"");
-	private PayPal payPal = new PayPal("","","");
-	private Cash cash = new Cash();
-	
+		
     public  PaymentMethod getPaymentMethod(PaymentMethodType paymentMethod) {
     	
     	PaymentMethod paymentMethodStrategy = null;
     	
         switch (paymentMethod) {
             case PAY_BY_CASH:
-                paymentMethodStrategy = payWithCash();
+                return new Cash();
                 
             case PAY_BY_CREDIT_CARD:
-                paymentMethodStrategy =payWithCreditCard();
+                return new CreditCard();
                 
             case PAY_BY_DEBIT_CARD:
-                paymentMethodStrategy = payWithDebitCard();
+                return new DebitCard();
                 
             case PAY_BY_REVOLUT_CARD:
-                paymentMethodStrategy =payWithRevolutCard();
+                return new Revolut();
                 
             case PAY_BY_PAYPAL:
-                paymentMethodStrategy = payWithPayPal();
+                 return new PayPal();
                 
             default:
-                paymentMethodStrategy = null;
+                return null;
         }
         
-        return paymentMethodStrategy;
         
     }
     
-    public VisaCard payWithCreditCard() {
-    	
-    	visaCard.paymentInformation();
-    	visaCard = new CreditCard(visaCard.getNameOnCard(),visaCard.getCardNumber(),visaCard.getCvv(),visaCard.getExpiryDate());
-    	return visaCard;
-    }
     
-    public VisaCard payWithDebitCard() {
-    	
-    	visaCard.paymentInformation();
-    	visaCard = new DebitCard(visaCard.getNameOnCard(),visaCard.getCardNumber(),visaCard.getCvv(),visaCard.getExpiryDate());
-    	return visaCard;
-    }
-    
-    public VisaCard payWithRevolutCard() {
-    	
-    	visaCard.paymentInformation();
-    	visaCard = new Revolut(visaCard.getNameOnCard(),visaCard.getCardNumber(),visaCard.getCvv(),visaCard.getExpiryDate());
-    	return visaCard;
-    }
-    
-    
-    public Cash payWithCash() {
 
-    	cash.paymentInformation();
-    	return cash;
-    }
-    
-    public PayPal payWithPayPal() {
-    	
-    	payPal.paymentInformation();
-    	payPal = new PayPal(payPal.getUsername(),payPal.getEmail(),payPal.getPassword());
-    	return payPal;
-    }
 	
 	
 
