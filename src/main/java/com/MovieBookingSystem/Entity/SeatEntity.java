@@ -8,6 +8,9 @@ import javax.persistence.Table;
 @Table(name = "tbl_seat")
 public class SeatEntity {
 	
+	@Column(name = "seatId")
+	private int seatId;
+	
 	@Column(name = "column")
 	private String column;
 	
@@ -41,6 +44,14 @@ public class SeatEntity {
 	}
 	public void setSeatStatus(String seatStatus) {
 		this.seatStatus = seatStatus;
+	}
+
+	public int getSeatId() {
+		return seatId;
+	}
+
+	public void setSeatId(int seatId) {
+		this.seatId = seatId;
 	}
 
 }

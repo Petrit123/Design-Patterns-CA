@@ -4,5 +4,5 @@ public interface PaymentMethod {
 	
 	public void pay(double amount);
 	
-	public void paymentInformation();
+	//public void paymentInformation();
 }

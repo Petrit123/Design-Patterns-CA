@@ -7,48 +7,36 @@ import javax.persistence.Table;
 
 import com.MovieBookingSystem.Strategy.PaymentMethod;
 
-@Entity
-@Table(name = "tbl_booking")
-public class BookingEntity {
+public class BookingDTO{
 	
-	@Id
-	@Column(name = "bookingId")
+
 	private int bookingId;
 	
-	@Column(name = "userid")
 	private int userId;
 	
-	@Column(name = "movieTheaterId")
 	private int movieTheaterId;
 	
-	@Column(name = "movieId")
 	private int movieId;
 	
-	@Column(name = "amount")
 	private double amount;
 	
-	@Column(name = "movieShowingTime")
 	private String movieShowingTime;
 	
-	@Column(name = "dateBooked")
 	private String dateBooked;
 	
-	@Column(name = "bookingStatus")
 	private String bookingStatus;
 	
-	@Column(name = "numTickets")
 	private int numTickets;
 	
-	@Column(name = "seatId")
 	private int seatId;
 	
-	public BookingEntity() {
+	public BookingDTO() {
 		
 	}
 	
-	public BookingEntity(int bookingId, int userId, int movieTheaterId, int movieId, double amount, String movieShowingTime,
+	public BookingDTO(int bookingId, int userId, int movieTheaterId, int movieId, double amount, String movieShowingTime,
 						 String dateBooked, String bookingStatus, int numTickets, int seatId) {
-		
+
 		this.bookingId = bookingId;
 		this.userId = userId;
 		this.movieTheaterId = movieTheaterId;
@@ -59,6 +47,20 @@ public class BookingEntity {
 		this.bookingStatus = bookingStatus;
 		this.numTickets = numTickets;
 		this.seatId = seatId;
+	}
+	
+	public BookingDTO(BookingEntity entity) {
+		
+		this.bookingId = entity.getBookingId();
+		this.userId = entity.getUserId();
+		this.movieTheaterId = entity.getMovieTheaterId();
+		this.movieId = entity.getMovieId();
+		this.amount = entity.getAmount();
+		this.movieShowingTime = entity.getMovieShowingTime();
+		this.dateBooked = entity.getDateBooked();
+		this.bookingStatus = entity.getBookingStatus();
+		this.numTickets = entity.getNumTickets();
+		this.seatId = entity.getSeatId();
 	}
 	
 	public int getBookingId() {
