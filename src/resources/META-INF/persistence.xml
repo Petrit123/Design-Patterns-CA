@@ -4,9 +4,9 @@
 
 
 
-<persistence-unit name="bankPersistenceUnit">
+<persistence-unit name="MovieBookingSystemPersistenceUnit">
 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <class>com.MovieBookingSystem.Entity</class> 
+    <class>com.MovieBookingSystem.Entity.UserEntity</class> 
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     
     <properties>
@@ -14,7 +14,7 @@
         <property name="hibernate.jdbc.time_zone" value="UTC"/>
         <property name="hibernate.hbm2ddl.auto" value="update"/>
         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql2.freemysqlhosting.net/sql2308118?useTimezone=true&amp;serverTimezone=GMT"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql2.freemysqlhosting.net/sql2317256?useTimezone=true&amp;serverTimezone=GMT"/>
         <property name="javax.persistence.jdbc.user" value="sql2317256"/>
         <property name="javax.persistence.jdbc.password" value="rV4%aV9%"/>
     </properties>

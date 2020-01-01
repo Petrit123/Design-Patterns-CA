@@ -29,6 +29,14 @@ xmlns="http://www.springframework.org/schema/beans">
 <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
 
+<bean id = "entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+<property name = "persistenceUnitName" value="MovieBookingSystemPersistenceUnit"/>
+
+</bean>
+
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+			<property name="entityManagerFactory" ref="entityManagerFactory"/>
+		</bean>
 	
 	<!-- This is required to handle transactions via Annotations like @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
