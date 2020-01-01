@@ -20,11 +20,11 @@ public class OfferLetter implements Subject{
 	}
 	
 	private void offerLetter() {
-		notifyObservers();
 	}
 	
 	public void setOffers(String offers) {
 		this.offers = offers;
+		notifyObservers();
 	}
 	
 	public String getOffers() {
@@ -40,7 +40,7 @@ public class OfferLetter implements Subject{
 	}
 	
 	public void notifyObservers() {
-		System.out.print("Notify all subscribed users about new cinema offers");
+		System.out.print("Notify all subscribed users about new cinema offers\n\n");
 		for (Observer observer : observers) {
 			observer.update(this.offers);
 		}

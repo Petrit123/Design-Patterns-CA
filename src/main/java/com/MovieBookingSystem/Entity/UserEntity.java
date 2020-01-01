@@ -21,7 +21,7 @@ public class UserEntity implements Observer{
 	private String name;
 	
 	@Column(name = "dateOfBirth")
-	private Date dateOfBirth;
+	private String dateOfBirth;
 	
 	@Column(name = "gender")
 	private char gender;
@@ -40,7 +40,7 @@ public class UserEntity implements Observer{
 	
 	private String offerLetter;
 
-	public UserEntity(int id, String name, Date dateOfBirth, char gender, String phoneNumber, String email, String userName, String password) {
+	public UserEntity(int id, String name, String dateOfBirth, char gender, String phoneNumber, String email, String userName, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -64,10 +64,10 @@ public class UserEntity implements Observer{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public char getGender() {
@@ -102,6 +102,8 @@ public class UserEntity implements Observer{
 	}
 
 	public void update(String offers) {
-		this.offerLetter = offers;
+//		this.offerLetter = offers;
+		System.out.print("Dear " + userName + ", \n\nPlease see current deals that are on offer"
+				+ " near your local cinema:\n\n" + offers);
 	}
 }
