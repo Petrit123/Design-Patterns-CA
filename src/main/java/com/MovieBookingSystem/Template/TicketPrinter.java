@@ -24,12 +24,11 @@ public class TicketPrinter extends PrinterService{
 	String printTicketDetails() {
 	
 
-//		return "\n\n\nMovie Showing Date: " + booking.getMovieShowingTime() +
-//			   "\n\nSeat: " + booking.getSeatId().getColumn().toString() + booking.getSeatId().getRow() +
-//			   "\n\nTicket Booking Status: " + booking.getBookingStatus() +
-//			   "\n\nTicket(s): " + booking.getNumTickets() + "\n\n";
+		return "\n\n\nMovie Showing Date: " + booking.getMovieShowingTime() +
+			   "\n\nSeat: " + booking.getSeatId() +
+			   "\n\nTicket Booking Status: " + booking.getBookingStatus() +
+			   "\n\nTicket(s): " + booking.getNumTickets() + "\n\n";
 		
-		return "";
 	}
 
 	@Override

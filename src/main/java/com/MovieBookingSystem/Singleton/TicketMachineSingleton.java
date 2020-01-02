@@ -3,6 +3,9 @@ package com.MovieBookingSystem.Singleton;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.MovieBookingSystem.Entity.BookingDAO;
+import com.MovieBookingSystem.Entity.BookingEntity;
+import com.MovieBookingSystem.Template.PrinterService;
+import com.MovieBookingSystem.Template.TicketPrinter;
 
 /**
  * 
@@ -17,6 +20,7 @@ public class TicketMachineSingleton {
 
 	private int totalMovieTickets = 10;
 	private static volatile TicketMachineSingleton ticketMachineInstance;              // Static variable to hold one instance of the TicketMachineSingleton class
+	private PrinterService printer;
 	
 	private TicketMachineSingleton() {                                // private constructor so no one can instantiate this class.
 		
@@ -41,6 +45,11 @@ public class TicketMachineSingleton {
 		else {
 			return "Tickets are no longer available";
 		}
+	}
+	
+	public String printTicket(BookingEntity booking) {
+		 printer = new TicketPrinter(booking);
+		 return printer.printTicket();
 	}
 		
 	public static TicketMachineSingleton getTicketMachineSingletonInstance() {
