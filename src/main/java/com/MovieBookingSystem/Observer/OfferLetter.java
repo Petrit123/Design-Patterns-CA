@@ -19,12 +19,12 @@ public class OfferLetter implements Subject{
 		return observers;
 	}
 	
-	private void offerLetter() {
+	public void offerLetter() {
 	}
 	
 	public void setOffers(String offers) {
 		this.offers = offers;
-		notifyObservers();
+		notifyObservers();	
 	}
 	
 	public String getOffers() {

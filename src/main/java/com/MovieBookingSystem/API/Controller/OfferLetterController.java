@@ -18,7 +18,7 @@ public class OfferLetterController {
 	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/newOffers")
 	@ResponseBody
 	public void sendNewOfferLetter(@RequestBody String newOffer) {
-		userDAO.sendOfferLetters(newOffer);
+		  userDAO.sendOfferLetters(newOffer);
 	}
-
+	
 }

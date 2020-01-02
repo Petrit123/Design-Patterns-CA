@@ -44,14 +44,12 @@ public class UserDAO {
 	
 	public void sendOfferLetters(String newOffer) {
 		List<UserEntity> userList = entityManager.createQuery("SELECT e FROM UserEntity e", UserEntity.class).getResultList();
-		
 		OfferLetter offers = new OfferLetter();
 		
 		for(UserEntity user : userList) {
 			offers.registerObserver(user);
 			offers.setOffers(newOffer);
-		}
-		
+		}		
 	}
 	
 	
