@@ -1,5 +1,9 @@
 package com.MovieBookingSystem.Singleton;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.MovieBookingSystem.Entity.BookingDAO;
+
 /**
  * 
  * @author Petrit Krasniqi
@@ -8,14 +12,14 @@ package com.MovieBookingSystem.Singleton;
 
 public class TicketMachineSingleton {
 	
-	private boolean bookedOut;
-	private int totalMovieTickets;
-	private static volatile TicketMachineSingleton ticketMachineInstance;              // Static variable to hold one instance of the TicketMachineSingleton class
+	@Autowired
+	BookingDAO bookingDAO;
 
+	private int totalMovieTickets = 10;
+	private static volatile TicketMachineSingleton ticketMachineInstance;              // Static variable to hold one instance of the TicketMachineSingleton class
+	
 	private TicketMachineSingleton() {                                // private constructor so no one can instantiate this class.
 		
-		bookedOut = true;
-		totalMovieTickets = 10;
 	}
 
 	
@@ -23,18 +27,19 @@ public class TicketMachineSingleton {
 		return totalMovieTickets;
 	}
 	
-	public void displayAvailableSeats() {
-		String seats = "blah";
-		System.out.println("Seats available: " + seats);
+	public String displayAvailableSeats() {
+		String seats = "A5, A4, A3";
+		return seats;
 	}
 	
-	public void bookTicket() {
+	public String bookTicket() {
 		
 		if (totalMovieTickets > 0) {
 			totalMovieTickets -= 1;
+			return "Booking successful";
 		}
 		else {
-			System.out.print("Tickets are no longer available");
+			return "Tickets are no longer available";
 		}
 	}
 		
