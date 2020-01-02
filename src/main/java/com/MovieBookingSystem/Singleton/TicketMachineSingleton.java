@@ -2,8 +2,8 @@ package com.MovieBookingSystem.Singleton;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.MovieBookingSystem.Entity.BookingDAO;
-import com.MovieBookingSystem.Entity.BookingEntity;
+import com.MovieBookingSystem.API.DAO.BookingDAO;
+import com.MovieBookingSystem.API.Entity.BookingEntity;
 import com.MovieBookingSystem.Template.PrinterService;
 import com.MovieBookingSystem.Template.TicketPrinter;
 

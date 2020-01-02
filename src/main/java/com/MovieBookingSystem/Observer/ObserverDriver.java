@@ -2,7 +2,7 @@ package com.MovieBookingSystem.Observer;
 
 import java.util.Date;
 
-import com.MovieBookingSystem.Entity.UserEntity;
+import com.MovieBookingSystem.API.Entity.UserEntity;
 
 public class ObserverDriver {
 	

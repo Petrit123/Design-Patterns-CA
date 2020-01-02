@@ -3,8 +3,8 @@ package com.MovieBookingSystem.Template;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.MovieBookingSystem.Entity.BookingEntity;
-import com.MovieBookingSystem.Entity.SeatEntity;
+import com.MovieBookingSystem.API.Entity.BookingEntity;
+import com.MovieBookingSystem.API.Entity.SeatEntity;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentFactoryMethod;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentMethodType;
 

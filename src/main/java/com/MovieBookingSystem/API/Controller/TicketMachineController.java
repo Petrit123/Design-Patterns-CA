@@ -1,4 +1,4 @@
-package com.MovieBookingSystem.Controller;
+package com.MovieBookingSystem.API.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.MovieBookingSystem.Entity.BookingDAO;
+import com.MovieBookingSystem.API.DAO.BookingDAO;
 import com.MovieBookingSystem.Singleton.TicketMachineSingleton;
-import com.MovieBookingSystem.Entity.BookingEntity;
+import com.MovieBookingSystem.API.Entity.BookingEntity;
 
 @RestController
 public class TicketMachineController {

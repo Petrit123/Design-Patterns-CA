@@ -1,4 +1,4 @@
-package com.MovieBookingSystem.Entity;
+package com.MovieBookingSystem.API.DAO;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.MovieBookingSystem.API.DTO.BookingDTO;
+import com.MovieBookingSystem.API.Entity.BookingEntity;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentFactoryMethod;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentMethodType;
 

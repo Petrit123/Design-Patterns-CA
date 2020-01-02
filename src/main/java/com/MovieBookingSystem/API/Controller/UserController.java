@@ -1,4 +1,4 @@
-package com.MovieBookingSystem.Controller;
+package com.MovieBookingSystem.API.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.MovieBookingSystem.Entity.UserDAO;
-import com.MovieBookingSystem.Entity.UserDTO;
-import com.MovieBookingSystem.Entity.UserEntity;
+import com.MovieBookingSystem.API.DAO.UserDAO;
+import com.MovieBookingSystem.API.DTO.UserDTO;
+import com.MovieBookingSystem.API.Entity.UserEntity;
 
 @RestController
 public class UserController {

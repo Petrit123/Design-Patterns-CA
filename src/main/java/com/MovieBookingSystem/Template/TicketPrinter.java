@@ -1,12 +1,13 @@
 package com.MovieBookingSystem.Template;
 
 import java.awt.Graphics;
+
 import java.awt.print.PageFormat;
 import java.awt.print.PrinterException;
 import java.util.Arrays;
 import java.util.List;
 
-import com.MovieBookingSystem.Entity.BookingEntity;
+import com.MovieBookingSystem.API.Entity.BookingEntity;
 
 public class TicketPrinter extends PrinterService{
 	

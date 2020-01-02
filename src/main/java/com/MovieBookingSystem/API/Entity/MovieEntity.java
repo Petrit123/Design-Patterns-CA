@@ -1,4 +1,4 @@
-package com.MovieBookingSystem.Entity;
+package com.MovieBookingSystem.API.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

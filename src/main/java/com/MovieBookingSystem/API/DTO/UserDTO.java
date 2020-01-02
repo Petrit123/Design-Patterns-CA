@@ -1,4 +1,6 @@
-package com.MovieBookingSystem.Entity;
+package com.MovieBookingSystem.API.DTO;
+
+import com.MovieBookingSystem.API.Entity.UserEntity;
 
 public class UserDTO {
 	

@@ -1,4 +1,4 @@
-package com.MovieBookingSystem.Entity;
+package com.MovieBookingSystem.API.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,12 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_snack")
-public class SnackEntity {
+@Table(name="tbl_drink")
+public class DrinkEntity {
 	
 	@Id
-	@Column(name = "snackid")
-	private int id;
+	@Column(name = "drinkId")
+	private String id;
 	
 	@Column(name = "name")
 	private String name;
@@ -24,8 +24,8 @@ public class SnackEntity {
 	
 	@Column(name = "quantity")
 	private int quantity;
-
-	public SnackEntity(int id, String name, String description, double price, int quantity) {
+	
+	public DrinkEntity(String id, String name, String description, double price, int quantity) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,11 +33,11 @@ public class SnackEntity {
 		this.price = price;
 		this.quantity = quantity;
 	}
-
-	public int getId() {
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -64,5 +64,7 @@ public class SnackEntity {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
+	
 
 }

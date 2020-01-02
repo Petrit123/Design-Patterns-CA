@@ -1,4 +1,4 @@
-package com.MovieBookingSystem.Controller;
+package com.MovieBookingSystem.API.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.MovieBookingSystem.Entity.UserDAO;
+import com.MovieBookingSystem.API.DAO.UserDAO;
 
 @RestController
 public class OfferLetterController {
