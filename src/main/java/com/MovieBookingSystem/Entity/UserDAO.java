@@ -10,6 +10,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.MovieBookingSystem.Observer.OfferLetter;
+
 @Transactional
 @Repository
 public class UserDAO {
@@ -36,6 +38,18 @@ public class UserDAO {
 		entityManager.persist(user);		
 		
 		System.out.println("Success");	
+	}
+	
+	public void sendOfferLetters(String newOffer) {
+		List<UserEntity> userList = entityManager.createQuery("SELECT e FROM UserEntity e", UserEntity.class).getResultList();
+		
+		OfferLetter offers = new OfferLetter();
+		
+		for(UserEntity user : userList) {
+			offers.registerObserver(user);
+			offers.setOffers(newOffer);
+		}
+		
 	}
 	
 	
