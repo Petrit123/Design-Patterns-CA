@@ -13,4 +13,10 @@ public class Revolut extends VisaCard {
 		return "Revolut";
 	}
 
+	@Override
+	protected void validatePayment() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

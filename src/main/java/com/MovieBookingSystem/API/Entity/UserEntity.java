@@ -6,10 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.MovieBookingSystem.Observer.Observer;
+import com.MovieBookingSystem.Observer.Subject;
 
 @Entity
 @Table(name="tbl_User")
-public class UserEntity implements Observer{
+public class UserEntity {
 	
 	@Id
 	@Column(name = "userid")
@@ -36,14 +37,15 @@ public class UserEntity implements Observer{
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "offerLetter")
-	private String offerLetter;
+	@Column(name = "subscribed")
+	private boolean subscribed;
+	
 	
 	public UserEntity() {
 		
 	}
 
-	public UserEntity(int id, String name, String dateOfBirth, char gender, String phoneNumber, String email, String userName, String password) {
+	public UserEntity(int id, String name, String dateOfBirth, char gender, String phoneNumber, String email, String userName, String password, boolean subscribed) {
 
 		this.id = id;
 		this.name = name;
@@ -53,6 +55,7 @@ public class UserEntity implements Observer{
 		this.email = email;
 		this.userName = userName;
 		this.password = password;
+		this.subscribed = subscribed;
 	}
 	
 	public int getId() {
@@ -104,13 +107,12 @@ public class UserEntity implements Observer{
 		this.password = password;
 	}
 	
-	public String getOfferLetter() {
-		return this.offerLetter;
+	public boolean getSubscribed() {
+		return this.subscribed;
+	}
+	
+	public void setSubscribed(boolean subscribed) {
+		this.subscribed = subscribed;
 	}
 
-	public void update(String offers) {
-//		this.offerLetter = offers;
-		System.out.print("Dear " + userName + ", \n\nPlease see current deals that are on offer"
-				+ " near your local cinema:\n\n" + offers);
-	}
 }

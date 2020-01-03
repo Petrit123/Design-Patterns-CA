@@ -1,10 +1,14 @@
 package com.MovieBookingSystem.Observer;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import com.MovieBookingSystem.API.Entity.UserEntity;;
 
 public class OfferLetter implements Subject{
 	
 	private ArrayList<Observer> observers;
+	private String userName;
 	private String offers;
 	
 	public OfferLetter() {
@@ -22,7 +26,8 @@ public class OfferLetter implements Subject{
 	public void offerLetter() {
 	}
 	
-	public void setOffers(String offers) {
+	public void setOffers(String userName,String offers) {
+		this.userName = userName;
 		this.offers = offers;
 		notifyObservers();	
 	}
@@ -42,7 +47,7 @@ public class OfferLetter implements Subject{
 	public void notifyObservers() {
 		System.out.print("Notify all subscribed users about new cinema offers\n\n");
 		for (Observer observer : observers) {
-			observer.update(this.offers);
+			observer.update(this.userName, this.offers);
 		}
 	}
 

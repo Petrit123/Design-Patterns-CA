@@ -45,7 +45,9 @@ public abstract class VisaCard implements PaymentMethod{
 	}	
 
 
-	public abstract String getCardType();
+	protected abstract String getCardType();
+	
+	protected abstract void validatePayment();
 	
 	public void pay(double amount) {
 		paymentInformation();

@@ -14,4 +14,10 @@ public class CreditCard extends VisaCard {
 		return "Credit Card";
 	}
 
+	@Override
+	protected void validatePayment() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

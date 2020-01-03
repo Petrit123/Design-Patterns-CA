@@ -20,14 +20,14 @@ public class UserDTO {
 	
 	private String password;
 	
-	private String offerLetter;
+	private boolean subscribed;
 	
 	public UserDTO() {
 		
 	}
 	
 	public UserDTO(int id, String name, String dateOfBirth, char gender, String phoneNumber, String email,
-			String userName, String password, String offerLetter) {
+			String userName, String password, boolean subscribed) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,7 +37,7 @@ public class UserDTO {
 		this.email = email;
 		this.userName = userName;
 		this.password = password;
-		this.offerLetter = offerLetter;
+		this.subscribed = subscribed;
 	}
 	
 	public UserDTO(UserEntity entity) {
@@ -49,7 +49,7 @@ public class UserDTO {
 		this.email = entity.getEmail();
 		this.userName = entity.getUserName();
 		this.password = entity.getPassword();
-		this.offerLetter = entity.getOfferLetter();
+		this.subscribed = entity.getSubscribed();
 	}
 
 	public int getId() {
@@ -115,13 +115,14 @@ public class UserDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getOfferLetter() {
-		return offerLetter;
+	
+	public boolean getSubscribed() {
+		return subscribed;
 	}
 
-	public void setOfferLetter(String offerLetter) {
-		this.offerLetter = offerLetter;
+	public void setSubscribed(boolean subscribed) {
+		this.subscribed = subscribed;
 	}
+	
 	
 }
