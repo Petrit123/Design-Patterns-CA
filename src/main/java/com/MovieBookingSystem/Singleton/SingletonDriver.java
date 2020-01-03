@@ -4,6 +4,6 @@ public class SingletonDriver {
 	
 	public static void main(String[] args) {
 		
-		TicketMachineSingleton.getTicketMachineSingletonInstance().getTotalMovieTickets();
+		//TicketMachineSingleton.getTicketMachineSingletonInstance().getTotalMovieTickets();
 	}
 }

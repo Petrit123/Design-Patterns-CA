@@ -1,11 +1,7 @@
 package com.MovieBookingSystem.API.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.MovieBookingSystem.API.DAO.BookingDAO;
 import com.MovieBookingSystem.Singleton.TicketMachineSingleton;
@@ -27,18 +23,19 @@ public class TicketMachineController {
 	
 	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/TicketMachine/tickets")
 	@ResponseBody
-	public int getTotalTickets() {
-		int totalTickets = 0;
-		try {
+	public int getTotalTickets(@RequestParam String movieName, int movieTheaterId) {
+		//int totalTickets = 10;
+		//try {
 			
-			totalTickets = TicketMachineSingleton.getTicketMachineSingletonInstance().getTotalMovieTickets();
+		int	totalTickets = TicketMachineSingleton.getTicketMachineSingletonInstance().getTotalMovieTickets(movieName, movieTheaterId);
+			System.out.print("Petrit");
 			
-			return totalTickets;
-		} catch (Exception e) {
-			
-		}
+			//return totalTickets;
+//		} catch (Exception e) {
+//			
+//		}
 		
-		return 0;
+		return totalTickets;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/TicketMachine/seats")
@@ -61,13 +58,13 @@ public class TicketMachineController {
 	
 	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/TicketMachine/booking")
 	@ResponseBody
-	public String bookTicket() {
+	public String bookTicket(@RequestBody BookingEntity booking) {
 		
 		String message = "";
 		
 		try {
 			
-			 message = TicketMachineSingleton.getTicketMachineSingletonInstance().bookTicket();
+			 message = TicketMachineSingleton.getTicketMachineSingletonInstance().bookTicket(booking);
 			 
 			 return message;
 			
