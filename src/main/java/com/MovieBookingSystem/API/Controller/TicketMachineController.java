@@ -13,6 +13,8 @@ public class TicketMachineController {
 	@Autowired
 	BookingDAO bookingDAO;
 	
+
+	
 	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/TicketMachine/Print/Ticket")
 	@ResponseBody
 	public String printTicket(@RequestBody BookingEntity booking) {
@@ -26,10 +28,8 @@ public class TicketMachineController {
 	public int getTotalTickets(@RequestParam String movieName, int movieTheaterId) {
 		//int totalTickets = 10;
 		//try {
-			
+
 		int	totalTickets = TicketMachineSingleton.getTicketMachineSingletonInstance().getTotalMovieTickets(movieName, movieTheaterId);
-			System.out.print("Petrit");
-			
 			//return totalTickets;
 //		} catch (Exception e) {
 //			
@@ -56,7 +56,7 @@ public class TicketMachineController {
 		return null;
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, produces="application/json", value="/TicketMachine/booking")
+	@RequestMapping(method = RequestMethod.POST, produces="application/json", value="/TicketMachine/booking")
 	@ResponseBody
 	public String bookTicket(@RequestBody BookingEntity booking) {
 		
