@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_movie")
+@Table(name = "tbl_movie")
 public class MovieEntity {
 	
 	@Id
@@ -40,9 +40,12 @@ public class MovieEntity {
 	@Column(name = "numTickets")
 	private int numTickets;
 	
+	public MovieEntity() {
+		
+	}
+	
 	public MovieEntity(int movieId, int movieTheaterId, String movieName, String description, String cast, String category,
 					   String genre, String duration, String releaseDate, int numTickets) {
-		super();
 		this.movieId = movieId;
 		this.movieTheaterId = movieTheaterId;
 		this.movieName = movieName;

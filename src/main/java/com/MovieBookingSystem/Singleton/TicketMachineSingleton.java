@@ -1,9 +1,5 @@
 package com.MovieBookingSystem.Singleton;
 
-import com.MovieBookingSystem.API.DAO.MovieDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.MovieBookingSystem.API.DAO.BookingDAO;
 import com.MovieBookingSystem.API.Entity.BookingEntity;
 import com.MovieBookingSystem.Template.PrinterService;
 import com.MovieBookingSystem.Template.TicketPrinter;
@@ -16,24 +12,31 @@ import com.MovieBookingSystem.Template.TicketPrinter;
 
 public class TicketMachineSingleton {
 	
-	@Autowired
-	MovieDAO movieDAO;
-
-	@Autowired
-	BookingDAO bookingDAO;
-
-	private int totalMovieTickets = 0;
+	public static int totalMovieTickets = 0;
+	public static boolean ticketsAvailable;
 	private static volatile TicketMachineSingleton ticketMachineInstance;              // Static variable to hold one instance of the TicketMachineSingleton class
 	private PrinterService printer;
 	
-	private TicketMachineSingleton() {                                // private constructor so no one can instantiate this class.
+	private TicketMachineSingleton() {                                                 // private constructor so no one can instantiate this class.
 		
 	}
 
 	
-	public int getTotalMovieTickets(String movieName, int movieTheaterId) {
-		totalMovieTickets = movieDAO.findNumMovieTickets(movieName,movieTheaterId);
+public static TicketMachineSingleton getTicketMachineSingletonInstance() {
+	if (ticketMachineInstance == null) {
+		
+		synchronized (TicketMachineSingleton.class) {
+			if (ticketMachineInstance == null) {
+				
+				ticketMachineInstance = new TicketMachineSingleton();
+			}
+	    }			
+}
+	return ticketMachineInstance;
+}
 
+	
+	public int getTotalMovieTickets() {
 		return totalMovieTickets;
 	}
 	
@@ -42,35 +45,20 @@ public class TicketMachineSingleton {
 		return seats;
 	}
 	
-	public String bookTicket(BookingEntity booking) {
+	public void bookTicket() {
 		
 		if (totalMovieTickets > 0) {
 			totalMovieTickets -= 1;
-			bookingDAO.makeBooking(booking);
-			return "Booking successful";
+			ticketsAvailable = true;
 		}
 		else {
-			return "Tickets are no longer available";
+			ticketsAvailable = false;
 		}
 	}
 	
 	public String printTicket(BookingEntity booking) {
 		 printer = new TicketPrinter(booking);
 		 return printer.printTicket();
-	}
-		
-	public static TicketMachineSingleton getTicketMachineSingletonInstance() {
-		if (ticketMachineInstance == null) {
-			
-			synchronized (TicketMachineSingleton.class) {
-				if (ticketMachineInstance == null) {
-					
-					ticketMachineInstance = new TicketMachineSingleton();
-				}
-		    }			
-	}
-		return ticketMachineInstance;
-	}
-	
+	}	
 
 }
