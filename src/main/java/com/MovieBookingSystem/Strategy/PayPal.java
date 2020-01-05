@@ -55,16 +55,16 @@ public class PayPal implements PaymentMethod{
 	
 	  public void paymentInformation() {
 	        try {
-	                System.out.print("Enter PayPal email: ");
+	        	 System.out.print("Enter PayPal email: ");
 	                email = READER.readLine();
 	                
 	                System.out.print("Enter PayPal password: ");
 	                password = READER.readLine();
 	                
-	                if (1==1) {
-	                    System.out.println("Data verification has been successful.");
-	                } else {
+	                if (email.equals("") || password.equals("")) {
 	                    System.out.println("Wrong email or password!");
+	                } else {
+	                    System.out.println("Data verification has been successful.");
 	                }
 	                
 	        } catch (IOException ex) {
