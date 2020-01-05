@@ -13,6 +13,8 @@ import com.MovieBookingSystem.API.DTO.BookingDTO;
 import com.MovieBookingSystem.API.Entity.BookingEntity;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentMethodType;
 import com.MovieBookingSystem.Strategy.PayPal;
+import com.MovieBookingSystem.Template.PrinterService;
+import com.MovieBookingSystem.Template.TicketPrinter;
 
 @RestController
 public class BookingController {
@@ -31,8 +33,10 @@ public class BookingController {
 	
 	@RequestMapping(method = RequestMethod.POST, produces="application/json", value="/booking/create")
 	@ResponseBody
-	public void makeBooking(@RequestBody BookingEntity booking) {
+	public String makeBooking(@RequestBody BookingEntity booking) {
 		bookingDAO.makeBooking(booking);
+		PrinterService printer = new TicketPrinter(booking);
+		return printer.printTicket();
 	}
 	
 	// Pay by PayPal

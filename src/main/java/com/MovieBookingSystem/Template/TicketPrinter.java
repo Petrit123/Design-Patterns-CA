@@ -34,6 +34,6 @@ public class TicketPrinter extends PrinterService{
 
 	@Override
 	String printTicketPrice() {
-		return "Price: " + booking.getAmount() + "\n\n";
+		return "Price: " + booking.getAmount() * booking.getNumTickets() + "\n\n";
 	}
 }

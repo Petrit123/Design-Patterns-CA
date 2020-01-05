@@ -32,8 +32,7 @@ public abstract class PrinterService {
 		} catch (Exception ex) {
 			
 			return "Printing Ticket Failed, Error: " + ex.toString();
-		}
-	
+		}	
 	}
 	
 	protected String ticketHeader() {
