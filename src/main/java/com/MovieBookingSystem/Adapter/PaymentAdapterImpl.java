@@ -13,6 +13,13 @@ public class PaymentAdapterImpl implements PaymentAdapter {
 	@Override
 	public void payment(double amount) {
 		this.payPal.pay(amount);
+		collectUserPaymentInformation();
+		
+	}
+
+	@Override
+	public void collectUserPaymentInformation() {
+		this.payPal.paymentInformation();
 		
 	}
 	

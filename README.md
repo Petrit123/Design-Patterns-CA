@@ -10,3 +10,4 @@ A online movie ticket booking web service adhering to Software Design Patterns a
 * Factory Pattern
 * Singleton Pattern
 * Template Pattern
+* Adapter Pattern
