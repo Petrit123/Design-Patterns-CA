@@ -46,15 +46,15 @@ public class BookingDAO {
 	List<BookingEntity> foundBooking = entityManager.createQuery("SELECT e FROM BookingEntity e WHERE e.bookingId = :bookingId", BookingEntity.class)
 				.setParameter("bookingId", bookingId).getResultList();
 	
-	BookingEntity booking = foundBooking.get(0);
+	BookingDTO booking = new BookingDTO(foundBooking.get(0));
 	
-	PaymentFactoryMethod payment = new PaymentFactoryMethod();
+	PaymentFactoryMethod paymentFactory = new PaymentFactoryMethod();
 
-	//booking.pay(payment.getPaymentMethod(paymentMethod));
+	booking.setPaymentMethod(paymentFactory.getPaymentMethod(paymentMethod));
 	
 	foundBooking.get(0).setBookingStatus("Paid");
 	
-	entityManager.persist(booking);
+	entityManager.persist(foundBooking.get(0));
 
 		
 	}
