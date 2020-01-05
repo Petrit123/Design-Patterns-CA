@@ -79,7 +79,7 @@ public class TicketMachineController {
 		try {
 			TicketMachineSingleton.totalMovieTickets = movieDAO.findMovieTicketsByMovieId(booking.getMovieId(), booking.getMovieTheaterId());
 			TicketMachineSingleton.getTicketMachineSingletonInstance().bookTicket();			
-			if (TicketMachineSingleton.ticketsAvailable && booking.getNumTickets() <= TicketMachineSingleton.totalMovieTickets) {
+			if (TicketMachineSingleton.ticketsAvailable ) {
 				bookingDAO.makeBooking(booking);
 				movieDAO.updateNumTickets(booking.getMovieId(), booking.getNumTickets());
 				message =  "Booking successful"; 

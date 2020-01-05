@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.MovieBookingSystem.Strategy.PaymentMethod;
+
 @Entity
 @Table(name = "tbl_snack")
 public class SnackEntity {
@@ -24,6 +26,8 @@ public class SnackEntity {
 	
 	@Column(name = "quantity")
 	private int quantity;
+	
+	private PaymentMethod paymentMethod;
 
 	public SnackEntity(int id, String name, String description, double price, int quantity) {
 		super();
@@ -63,6 +67,21 @@ public class SnackEntity {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	public PaymentMethod getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(PaymentMethod payment) {
+		this.paymentMethod = payment;
+		payForSnacks();
+	}
+	
+	public void payForSnacks() {
+		
+		double totalPrice = price * quantity;
+		paymentMethod.pay(totalPrice);
 	}
 
 }
