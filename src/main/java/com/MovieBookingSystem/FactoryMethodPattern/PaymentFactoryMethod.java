@@ -8,11 +8,9 @@ import com.MovieBookingSystem.Strategy.*;
  * type chosen by the user.
  */
 
-public class PaymentFactoryMethod {
+public class PaymentFactoryMethod implements PaymentFactoryCreator{
 		
     public  PaymentMethod getPaymentMethod(PaymentMethodType paymentMethod) {
-    	
-    	PaymentMethod paymentMethodStrategy = null;
     	
         switch (paymentMethod) {
             case PAY_BY_CASH:
@@ -36,7 +34,7 @@ public class PaymentFactoryMethod {
         
         
     }
-    
+
     
 
 	
