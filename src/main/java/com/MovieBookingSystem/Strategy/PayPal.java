@@ -49,7 +49,7 @@ public class PayPal implements PaymentMethod{
 
 	
 	public void pay(double amount) {
-		paymentInformation();
+//		paymentInformation();
 		System.out.println(amount + " paid using PayPal");
 	}
 	
