@@ -17,7 +17,7 @@ public abstract class PrinterService {
 	private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 	private Date date = new Date();
 	
-	public String printTicket() {		
+	public final String printTicket() {		
 		try {
 			
 			StringBuilder ticket = new StringBuilder();
