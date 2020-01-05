@@ -50,7 +50,7 @@ public class BookingDAO {
 	
 	PaymentFactoryMethod payment = new PaymentFactoryMethod();
 
-	booking.pay(payment.getPaymentMethod(paymentMethod));
+	//booking.pay(payment.getPaymentMethod(paymentMethod));
 	
 	foundBooking.get(0).setBookingStatus("Paid");
 	

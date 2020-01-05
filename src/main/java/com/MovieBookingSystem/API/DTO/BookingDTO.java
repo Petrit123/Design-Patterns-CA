@@ -26,6 +26,8 @@ public class BookingDTO{
 	
 	private int seatId;
 	
+	private PaymentMethod paymentMethod;
+	
 	public BookingDTO() {
 		
 	}
@@ -120,8 +122,19 @@ public class BookingDTO{
 		this.seatId = seatId;
 	}
 	
-	public void pay(PaymentMethod paymentMethod) {
-		paymentMethod.pay(amount);
+	public PaymentMethod getPaymentMethod() {
+		return paymentMethod;
 	}
+
+	public void setPaymentMethod(PaymentMethod paymentMethod) {
+		this.paymentMethod = paymentMethod;
+		payForBooking();
+	}
+	
+	public void payForBooking() {
+		double totalPrice = numTickets * amount;
+		paymentMethod.pay(totalPrice);
+	}
+	
 	
 }

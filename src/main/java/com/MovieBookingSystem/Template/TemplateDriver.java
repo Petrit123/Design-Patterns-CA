@@ -3,10 +3,12 @@ package com.MovieBookingSystem.Template;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.MovieBookingSystem.API.DTO.BookingDTO;
 import com.MovieBookingSystem.API.Entity.BookingEntity;
 import com.MovieBookingSystem.API.Entity.SeatEntity;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentFactoryMethod;
 import com.MovieBookingSystem.FactoryMethodPattern.PaymentMethodType;
+import com.MovieBookingSystem.Strategy.PayPal;
 
 public class TemplateDriver {
 	
@@ -15,11 +17,8 @@ public class TemplateDriver {
 		PaymentFactoryMethod payment = new PaymentFactoryMethod();
 
 		SeatEntity seat = new SeatEntity("A",5,"Available");
-		BookingEntity booking = new BookingEntity(1,1,1,1,50.0,"21:33:09","26/12/2019","Confirmed",1,1);
-	    booking.pay(payment.getPaymentMethod(PaymentMethodType.PAY_BY_PAYPAL));
+		BookingDTO booking = new BookingDTO(1,1,1,1,50.0,"21:33:09","26/12/2019","Confirmed",1,1);
+	    booking.setPaymentMethod(new PayPal());
 	    
-	    PrinterService ticket = new TicketPrinter(booking);
-	    System.out.print(ticket.printTicket());
-
 	}
 }

@@ -42,8 +42,6 @@ public class BookingEntity {
 	@Column(name = "seatId")
 	private int seatId;
 	
-	private PaymentMethod paymentMethod;
-	
 	public BookingEntity() {
 		
 	}
@@ -123,25 +121,6 @@ public class BookingEntity {
 	public void setSeatId(int seatId) {
 		this.seatId = seatId;
 	}
-	
-	public PaymentMethod getPaymentMethod() {
-		return paymentMethod;
-	}
-
-	public void setPaymentMethod(PaymentMethod paymentMethod) {
-		this.paymentMethod = paymentMethod;
-		payForBooking();
-	}
-
-	public void pay(PaymentMethod paymentMethod) {
-		paymentMethod.pay(amount);
-	}
-	
-	public void payForBooking() {
-		double totalPrice = numTickets * amount;
-		paymentMethod.pay(totalPrice);
-	}
-	
 	
 	
 }
